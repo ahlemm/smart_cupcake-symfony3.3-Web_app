@@ -1,0 +1,36 @@
+
+{% block content %}
+
+    <style>
+        td {
+            padding: 25px;
+        }
+    </style>
+    <h1>Artisans</h1>
+        <table border="1">
+            <tr>
+                <td>Nom</td>
+                <td>Prenom</td>
+                <td>date_naissance</td>
+                <td>Email</td>
+                <td>adresse</td>
+                <td>NumeroTelephone</td>
+            </tr>
+            {% for m in mark %}
+
+                    <tr>
+
+                        <td>{{ m.nom }}</td>
+                        <td>{{ m.prenom }}</td>
+                        <td>{{ m.date_naissance }}</td>
+                        <td>{{ m.email }}</td>
+                        <td>{{ m.adresse  }}</td>
+                        <td>{{ m.num_tel}}</td>
+
+                    </tr>
+
+            {% endfor %}
+
+        </table>
+
+{% endblock %}

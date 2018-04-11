@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="patisserieBundle\Entity\Recette" table="recette">
+    <indexes>
+      <index name="id_user" columns="id_user"/>
+    </indexes>
+    <id name="idRecette" type="integer" column="id_recette">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomRecette" type="string" column="nom_recette" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="infoRecette" type="string" column="info_recette" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prixRecette" type="float" column="prix_recette" precision="10" scale="0" nullable="false"/>
+    <field name="image" type="blob" column="image" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idUser" target-entity="User" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_user" referenced-column-name="id_user"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

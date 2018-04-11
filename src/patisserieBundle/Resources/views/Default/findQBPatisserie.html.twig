@@ -1,0 +1,39 @@
+<h2>Recherche de patisserie par Qb</h2>
+
+{{ form_start(form) }}
+{{ form_end(form) }}
+
+<h2>Liste des patisseries</h2>
+
+<table border="1">
+    <tr>
+
+        <th>id</th>
+        <th>nom</th>
+        <th>activite</th>
+        <th>info</th>
+        <th>longitude</th>
+        <th>latitude</th>
+        <th>adresse</th>
+        <th>etat</th>
+        <th>idUser</th>
+        <th>photo</th>
+
+    </tr>
+    {% for patisserie in patisseries %}
+    <tr>
+        <td>{{ patisserie.idPatisserie }}</td>
+        <td>{{ patisserie.nomPatisserie }}</td>
+        <td>{{ patisserie.activite }}</td>
+        <td>{{ patisserie.infoPatisserie }}</td>
+        <td>{{ patisserie.longitude }}</td>
+        <td>{{ patisserie.latitude }}</td>
+        <td>{{ patisserie.adressePatisserie }}</td>
+        <td>{{ patisserie.etatPatisserie }}</td>
+        <td>{{ patisserie.idUser }}</td>
+        <td>{{ patisserie.photoPatisserie }}</td>
+
+        <td><a href="{{ path('delete_patisserie', {'id':patisserie.idPatisserie}) }}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>

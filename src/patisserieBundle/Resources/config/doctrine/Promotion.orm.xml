@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="patisserieBundle\Entity\Promotion" table="promotion">
+    <id name="idPromotion" type="integer" column="id_promotion">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="pourcentage" type="integer" column="pourcentage" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="prixProduit" type="float" column="prix_produit" precision="10" scale="0" nullable="false"/>
+    <field name="nvPrix" type="float" column="nv_prix" precision="10" scale="0" nullable="false"/>
+    <field name="nomProduit" type="string" column="nom_produit" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="idProduit" type="integer" column="id_produit" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="idUser" type="integer" column="id_user" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

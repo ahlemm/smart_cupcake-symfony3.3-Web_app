@@ -1,0 +1,22 @@
+<script src="{{ asset('jquery-3.2.1.js') }}"></script>
+<script>
+    $(function () {
+        $('#btn').on('click', function () {
+            var link = 'http://localhost'+'{{ path('rechercher') }}';
+            $.ajax({
+                type: "Post",
+                data: 'data',
+                url: link,
+                success: function (data) {
+                    console.log(data);
+                }
+            })
+        })
+    })
+</script>
+
+<h2>Recherche Ajax</h2>
+
+<label for="patisserie">Patisserie</label>
+<input type="text" name="nomPatisserie" id="nomPatisserie"><br>
+<button type="button" id="btn">Rechercher</button>

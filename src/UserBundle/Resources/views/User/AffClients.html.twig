@@ -1,0 +1,35 @@
+
+{% block content %}
+
+    <style>
+        td {
+            padding: 25px;
+        }
+    </style>
+<h1>Clients</h1>
+    <table border="1">
+        <tr>
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Adresse</td>
+            <td>UserName</td>
+            <td>Email</td>
+            <td>NumeroTelephone</td>
+        </tr>
+        {% for m in mark %}
+
+            <tr>
+
+                <td>{{ m.nom }}</td>
+                <td>{{ m.prenom }}</td>
+                <td>{{ m.adresse }}</td>
+                <td>{{ m.username }}</td>
+                <td>{{ m.email  }}</td>
+                <td>{{ m.numTel}}</td>
+
+            </tr>
+
+        {% endfor %}
+
+    </table>
+

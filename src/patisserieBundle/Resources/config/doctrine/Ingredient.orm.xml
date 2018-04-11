@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="patisserieBundle\Entity\Ingredient" table="ingredient">
+    <indexes>
+      <index name="prix_ingredient" columns="prix_ingredient"/>
+      <index name="id_user" columns="id_user"/>
+      <index name="id_ingredient" columns="id_ingredient"/>
+    </indexes>
+    <id name="idIngredient" type="integer" column="id_ingredient">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomIngredient" type="string" column="nom_ingredient" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prixIngredient" type="float" column="prix_ingredient" precision="10" scale="0" nullable="false"/>
+    <many-to-one field="idUser" target-entity="User" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_user" referenced-column-name="id_user"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

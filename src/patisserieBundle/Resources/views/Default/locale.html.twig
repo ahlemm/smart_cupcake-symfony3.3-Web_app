@@ -1,0 +1,25 @@
+
+
+    <div id="home">
+
+        <!-- container -->
+        <div class="container"> <div class="home-wrap">
+
+                <div id="map" style="width: 1000px; height: 800px"></div>
+                <script>
+                    var lat = {{ em.latitude}};
+                    var lng = {{ em.longitude }};
+                    function initMap() {
+                        // Create a map object and specify the DOM element for display.
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: lat, lng: lng},
+                            zoom: 16
+                        });
+                    }
+
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZrOwx3TRZhHiUL2HbUcrtfoFsEaqhcdE&callback=initMap"
+                        async defer></script>
+            </div>
+        </div>
+    </div>

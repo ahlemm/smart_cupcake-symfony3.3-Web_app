@@ -1,0 +1,46 @@
+patisserie_homepage:
+    path:     /i
+    defaults: { _controller: patisserieBundle:Default:add }
+patisserie_ajout:
+    path:     /ajout
+    defaults: { _controller: patisserieBundle:patisserie:Ajouter}
+patisserie_list:
+    path:     /list
+    defaults: { _controller: patisserieBundle:Default:listPatisseries}
+
+edit_patisserie:
+    path:     /l/{id}
+    defaults: { _controller: patisserieBundle:Default:edit}
+delete_patisserie:
+    path:     /delete/{id}
+    defaults: { _controller: patisserieBundle:Default:delete}
+
+
+locale1:
+    path:     /locale/{id}
+    defaults: { _controller: patisserieBundle:Default:lieu}
+loca:
+    path:     /rechercher
+    defaults: { _controller: patisserieBundle:Default:rechercher}
+pdf:
+    path:     /pdf
+    defaults: { _controller: patisserieBundle:Default:pdf}
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile

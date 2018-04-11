@@ -1,0 +1,52 @@
+<h2>Liste des marques</h2>
+<form method="POST">
+    <h1>Recherche:</h1>
+    Expéditeur:
+    <br>
+    <input name="nomProduit" type="text" placeholder="chercher par expéditeur .. ">
+    <br>
+    <input type="submit" name=" rechercher" value="rechercher">
+</form>
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>nom</th>
+        <th>activite</th>
+        <th>info</th>
+        <th>longitude</th>
+        <th>latitude</th>
+        <th>adresse</th>
+        <th>etat</th>
+        <th>photo</th>
+
+
+
+
+
+        <th>Supprimer</th>
+        <th>Modifier</th>
+    </tr>
+    {% for m in mark %}
+        <tr>
+            <td>{{ m.idPatisserie}}</td>
+
+            <td>{{ m.nomPatisserie}}</td>
+            <td>{{ m.activite }}</td>
+            <td>{{ m.infoPatisserie }}</td>
+            <td>{{ m.longitude }}</td>
+            <td>{{ m.latitude }}</td>
+            <td>{{ m.adressePatisserie }}</td>
+            <td>{{ m.etatPatisserie }}</td>
+            <td>{{ m.photoPatisserie }}</td>
+            <td><a href="{{ path('delete_patisserie', {'id':m.idPatisserie}) }}">supprimer</a></td>
+            <td><a href="{{ path('edit_patisserie', {'id':m.idPatisserie}) }}">Modifier</a></td>
+
+            <td><a href="{{ path('locale1', {'id':m.idPatisserie}) }}">Map</a></td>
+
+
+
+
+        </tr>
+    {% endfor %}
+</table>

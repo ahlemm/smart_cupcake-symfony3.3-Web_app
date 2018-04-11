@@ -1,0 +1,17 @@
+<h2>Modifier la patisserie {{ patisserie.nomPatisserie }}</h2>
+
+{{ form_start(form) }}
+{{ form_row(form.nomPatisserie, {'label': 'Nom de la patisserie'}) }}
+{{ form_row(form.activite) }}
+{{ form_row(form.infoPatisserie) }}
+{{ form_row(form.longitude) }}
+{{ form_row(form.latitude) }}
+{{ form_row(form.adressePatisserie) }}
+{{ form_row(form.etatPatisserie) }}
+{{ form_row(form.photoPatisserie) }}
+
+
+{{ form_widget(form.Ajouter, {'label' : 'Modifier'}) }}
+
+
+{{ form_end(form) }}

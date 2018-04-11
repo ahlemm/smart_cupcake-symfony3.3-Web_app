@@ -1,0 +1,92 @@
+<?php
+
+namespace patisserieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Patisserie
+ *
+ * @ORM\Table(name="patisserie", indexes={@ORM\Index(name="id_user", columns={"id_user"})})
+ * @ORM\Entity
+ */
+class Patisserie
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_patisserie", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPatisserie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_patisserie", type="string", length=255, nullable=false)
+     */
+    private $nomPatisserie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="activite", type="string", length=255, nullable=false)
+     */
+    private $activite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info_patisserie", type="string", length=255, nullable=false)
+     */
+    private $infoPatisserie;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="longitude", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $longitude;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $latitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_patisserie", type="string", length=255, nullable=false)
+     */
+    private $adressePatisserie;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="etat_patisserie", type="integer", nullable=false)
+     */
+    private $etatPatisserie = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_patisserie", type="string", length=255, nullable=true)
+     */
+    private $photoPatisserie;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
+     */
+    private $idUser;
+
+
+}
+

@@ -1,0 +1,13 @@
+my_app_user_homepage:
+    path:     /
+    defaults: { _controller: MyAppUserBundle:Default:index }
+AffClients:
+    path:     /AffClients
+    defaults: { _controller: MyAppUserBundle:User:AffClients }
+AffArtisans:
+    path:     /Affpatissier
+    defaults: { _controller: MyAppUserBundle:User:Affpatissier }
+back_office_admin:
+    path:     /admin
+    defaults: { _controller: patisserieBundle:Default:admin }
+

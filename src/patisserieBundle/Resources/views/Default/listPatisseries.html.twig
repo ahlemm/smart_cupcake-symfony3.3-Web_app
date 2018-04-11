@@ -1,0 +1,45 @@
+<h2>Liste des marques</h2>
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>nom</th>
+        <th>activite</th>
+        <th>info</th>
+        <th>longitude</th>
+        <th>latitude</th>
+        <th>adresse</th>
+        <th>etat</th>
+        <th>photo</th>
+
+
+
+
+
+        <th>Supprimer</th>
+        <th>Modifier</th>
+    </tr>
+    {% for patisserie in patisserie %}
+        <tr>
+            <td>{{ patisserie.idPatisserie}}</td>
+
+            <td>{{ patisserie.nomPatisserie}}</td>
+            <td>{{ patisserie.activite }}</td>
+            <td>{{ patisserie.infoPatisserie }}</td>
+            <td>{{ patisserie.longitude }}</td>
+            <td>{{ patisserie.latitude }}</td>
+            <td>{{ patisserie.adressePatisserie }}</td>
+            <td>{{ patisserie.etatPatisserie }}</td>
+            <td>{{ patisserie.photoPatisserie }}</td>
+            <td><a href="{{ path('delete_patisserie', {'id':patisserie.idPatisserie}) }}">supprimer</a></td>
+            <td><a href="{{ path('edit_patisserie', {'id':patisserie.idPatisserie}) }}">Modifier</a></td>
+
+            <td><a href="{{ path('locale1', {'id':patisserie.idPatisserie}) }}">Map</a></td>
+            <td><a href="{{ path('pdf', {'id':patisserie.idPatisserie}) }}">telecharger la carte visite</a></td>
+
+
+
+
+        </tr>
+    {% endfor %}
+</table>

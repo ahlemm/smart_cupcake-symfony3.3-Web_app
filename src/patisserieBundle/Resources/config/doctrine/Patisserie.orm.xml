@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="patisserieBundle\Entity\Patisserie" table="patisserie">
+    <indexes>
+      <index name="id_user" columns="id_user"/>
+    </indexes>
+    <id name="idPatisserie" type="integer" column="id_patisserie">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomPatisserie" type="string" column="nom_patisserie" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="activite" type="string" column="activite" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="infoPatisserie" type="string" column="info_patisserie" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="longitude" type="float" column="longitude" precision="10" scale="0" nullable="false"/>
+    <field name="latitude" type="float" column="latitude" precision="10" scale="0" nullable="false"/>
+    <field name="adressePatisserie" type="string" column="adresse_patisserie" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="etatPatisserie" type="integer" column="etat_patisserie" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">1</option>
+      </options>
+    </field>
+    <field name="photoPatisserie" type="string" column="photo_patisserie" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idUser" target-entity="User" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_user" referenced-column-name="id_user"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
